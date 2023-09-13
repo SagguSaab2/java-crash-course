@@ -1,0 +1,55 @@
+import java.util.*;
+class js                    //create class
+{
+    int matchesscore;int noms;int totatscore;
+    float calculateaverage()              //create a function to calculateaverage
+    {
+        float avg =(totatscore/noms);
+        return avg;
+    }
+    void getdata()              //create function
+    {
+        for (int i = 1; i < 10; i++)                //loop
+        {
+            totatscore = matchesscore + totatscore;
+            Scanner Scanner = new Scanner(System.in);
+            System.out.println("Enter the match score " + i + " matchesscore");
+            matchesscore = Scanner.nextInt();
+            if (matchesscore < 0) {
+                noms = i;
+                System.out.println("The application is terminate");
+                break;
+            }
+        }
+    }
+    void display()                                          //create function
+    {
+        System.out.println("The total score is " + totatscore);
+        System.out.println("The total number of matches " + noms);
+        System.out.println("The average score of matches "+calculateaverage());
+        System.out.println("This application is made by Saggu Saab ");
+    }
+}
+class Matches                           //create main class
+{
+    public static void main(String[] args)
+    {
+        js a=new js();          // create object
+        a.getdata();
+        a.display();
+    }
+}
+output :-
+Enter the match score 1 matchesscore
+2
+Enter the match score 2 matchesscore
+4
+Enter the match score 3 matchesscore
+6
+Enter the match score 4 matchesscore
+-8
+The application is terminate
+The total score is 12
+The total number of matches 4
+The average score of matches 3.0
+This application is made by Saggu Saab 
